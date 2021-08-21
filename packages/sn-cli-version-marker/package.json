@@ -1,0 +1,26 @@
+{
+  "name": "sn-cli-version-marker",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Bin Jiang <bin.jiang@geneegroup.com>",
+  "homepage": "https://github.com/Sneaken/sn-cli#readme",
+  "license": "ISC",
+  "main": "lib/sn-cli-version-marker.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sneaken/sn-cli.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/Sneaken/sn-cli/issues"
+  }
+}

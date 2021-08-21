@@ -1,0 +1,9 @@
+{
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "packages": [
+    "packages/@sn/cli*",
+    "packages/sn-cli-version-marker"
+  ],
+  "version": "0.0.0"
+}

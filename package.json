@@ -1,0 +1,11 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/@sn/*",
+    "packages/sn-cli-version-marker"
+  ],
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}

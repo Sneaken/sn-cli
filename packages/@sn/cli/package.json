@@ -5,14 +5,9 @@
   "author": "Bin Jiang <bin.jiang@geneegroup.com>",
   "homepage": "https://github.com/Sneaken/sn-cli#readme",
   "license": "ISC",
-  "main": "lib/cli.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
+  "bin": {
+    "sn": "bin/sn.js"
   },
-  "files": [
-    "lib"
-  ],
   "publishConfig": {
     "access": "public"
   },
@@ -27,6 +22,15 @@
     "url": "https://github.com/Sneaken/sn-cli/issues"
   },
   "dependencies": {
-    "@sn/cli-shared-utils": "^0.0.0"
-  }
+    "@sn/cli-shared-utils": "^0.0.0",
+    "commander": "^7.2.0",
+    "import-global": "^0.1.0",
+    "leven": "^3.1.0",
+    "minimist": "^1.2.5",
+    "slash": "^3.0.0"
+  },
+  "engines": {
+    "node": "^12.0.0 || >= 14.0.0"
+  },
+  "devDependencies": {}
 }

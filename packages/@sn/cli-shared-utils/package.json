@@ -1,6 +1,6 @@
 {
   "name": "@sn/cli-shared-utils",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "shared utilities for sn-cli packages",
   "author": "Bin Jiang <bin.jiang@geneegroup.com>",
   "homepage": "https://github.com/Sneaken/sn-cli#readme",

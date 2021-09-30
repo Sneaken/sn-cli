@@ -1,6 +1,6 @@
 {
   "name": "@sn/cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "author": "Bin Jiang <bin.jiang@geneegroup.com>",
   "homepage": "https://github.com/Sneaken/sn-cli#readme",
@@ -22,7 +22,7 @@
     "url": "https://github.com/Sneaken/sn-cli/issues"
   },
   "dependencies": {
-    "@sn/cli-shared-utils": "^0.0.0",
+    "@sn/cli-shared-utils": "^0.0.1",
     "commander": "^7.2.0",
     "import-global": "^0.1.0",
     "leven": "^3.1.0",
@@ -31,6 +31,5 @@
   },
   "engines": {
     "node": "^12.0.0 || >= 14.0.0"
-  },
-  "devDependencies": {}
+  }
 }

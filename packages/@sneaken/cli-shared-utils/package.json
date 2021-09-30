@@ -1,6 +1,6 @@
 {
   "name": "@sneaken/cli-shared-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "shared utilities for sneaken-cli packages",
   "author": "Bin Jiang <bin.jiang@geneegroup.com>",
   "homepage": "https://github.com/Sneaken/sneaken-cli#readme",

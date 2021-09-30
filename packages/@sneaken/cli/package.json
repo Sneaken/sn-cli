@@ -1,6 +1,6 @@
 {
   "name": "@sneaken/cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "> TODO: description",
   "author": "Bin Jiang <bin.jiang@geneegroup.com>",
   "homepage": "https://github.com/Sneaken/sneaken-cli#readme",
@@ -22,7 +22,7 @@
     "url": "https://github.com/Sneaken/sneaken-cli/issues"
   },
   "dependencies": {
-    "@sneaken/cli-shared-utils": "^0.0.1",
+    "@sneaken/cli-shared-utils": "^0.0.2",
     "commander": "^7.2.0",
     "import-global": "^0.1.0",
     "leven": "^3.1.0",

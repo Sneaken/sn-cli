@@ -2,6 +2,6 @@
 
 const snCliVersionMarker = require('..');
 
-describe('sn-cli-version-marker', () => {
+describe('sneaken-cli-version-marker', () => {
     it('needs tests');
 });

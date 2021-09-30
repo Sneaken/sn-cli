@@ -2,6 +2,6 @@
 
 const cli = require('..');
 
-describe('@sn/cli', () => {
+describe('@sneaken/cli', () => {
     it('needs tests');
 });

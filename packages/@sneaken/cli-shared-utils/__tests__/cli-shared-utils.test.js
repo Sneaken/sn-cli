@@ -2,6 +2,6 @@
 
 const cliSharedUtils = require('..');
 
-describe('@sn/cli-shared-utils', () => {
+describe('@sneaken/cli-shared-utils', () => {
     it('needs tests');
 });

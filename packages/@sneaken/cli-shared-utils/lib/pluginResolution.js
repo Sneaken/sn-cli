@@ -1,6 +1,6 @@
-const pluginRE = /^(@sn\/|sn-|@[\w-]+(\.)?[\w-]+\/sn-)cli-plugin-/
+const pluginRE = /^(@sneaken\/|sneaken-|@[\w-]+(\.)?[\w-]+\/sneaken-)cli-plugin-/
 const scopeRE = /^@[\w-]+(\.)?[\w-]+\//
-const officialRE = /^@sn\//
+const officialRE = /^@sneaken\//
 
 const officialPlugins = [
   'babel',
@@ -19,31 +19,31 @@ exports.toShortPluginId = id => id.replace(pluginRE, '')
 
 exports.resolvePluginId = id => {
   // already full id
-  // e.g. sn-cli-plugin-foo, @sn/cli-plugin-foo, @bar/sn-cli-plugin-foo
+  // e.g. sneaken-cli-plugin-foo, @sneaken/cli-plugin-foo, @bar/sneaken-cli-plugin-foo
   if (pluginRE.test(id)) {
     return id
   }
 
-  if (id === '@sn/cli-service') {
+  if (id === '@sneaken/cli-service') {
     return id
   }
 
   if (officialPlugins.includes(id)) {
-    return `@sn/cli-plugin-${id}`
+    return `@sneaken/cli-plugin-${id}`
   }
   // scoped short
-  // e.g. @sn/foo, @bar/foo
+  // e.g. @sneaken/foo, @bar/foo
   if (id.charAt(0) === '@') {
     const scopeMatch = id.match(scopeRE)
     if (scopeMatch) {
       const scope = scopeMatch[0]
       const shortId = id.replace(scopeRE, '')
-      return `${scope}${scope === '@sn/' ? `` : `sn-`}cli-plugin-${shortId}`
+      return `${scope}${scope === '@sneaken/' ? `` : `sneaken-`}cli-plugin-${shortId}`
     }
   }
   // default short
   // e.g. foo
-  return `sn-cli-plugin-${id}`
+  return `sneaken-cli-plugin-${id}`
 }
 
 exports.matchesPluginId = (input, full) => {
@@ -60,7 +60,7 @@ exports.matchesPluginId = (input, full) => {
 
 exports.getPluginLink = id => {
   if (officialRE.test(id)) {
-    return `https://github.com/Sneaken/sn-cli/tree/master/packages/%40sn/cli-plugin-${
+    return `https://github.com/Sneaken/sneaken-cli/tree/master/packages/%40sn/cli-plugin-${
       exports.toShortPluginId(id)
     }`
   }

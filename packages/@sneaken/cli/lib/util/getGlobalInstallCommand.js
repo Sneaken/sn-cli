@@ -1,4 +1,4 @@
-const { execa, hasYarn, hasPnpm3OrLater } = require('@sn/cli-shared-utils')
+const { execa, hasYarn, hasPnpm3OrLater } = require('@sneaken/cli-shared-utils')
 
 module.exports = function getGlobalInstallCommand () {
   if (hasYarn()) {

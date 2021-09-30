@@ -1,11 +1,11 @@
-# `@sn/cli`
+# `@sneaken/cli`
 
 > TODO: description
 
 ## Usage
 
 ```
-const cli = require('@sn/cli');
+const cli = require('@sneaken/cli');
 
 // TODO: DEMONSTRATE API
 ```

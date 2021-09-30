@@ -3,7 +3,7 @@
 // Check node version before requiring/doing anything else
 // The user may be on a very old node version
 
-const { chalk, semver } = require('@sn/cli-shared-utils')
+const { chalk, semver } = require('@sneaken/cli-shared-utils')
 const requiredVersion = require('../package.json').engines.node
 const leven = require('leven')
 
@@ -17,7 +17,7 @@ function checkNodeVersion (wanted, id) {
   }
 }
 
-checkNodeVersion(requiredVersion, '@sn/cli')
+checkNodeVersion(requiredVersion, '@sneaken/cli')
 
 const fs = require('fs')
 const path = require('path')
@@ -27,8 +27,8 @@ const minimist = require('minimist')
 // enter debug mode when creating test repo
 if (
   slash(process.cwd()).indexOf('/packages/test') > 0 && (
-    fs.existsSync(path.resolve(process.cwd(), '../@sn')) ||
-    fs.existsSync(path.resolve(process.cwd(), '../../@sn'))
+    fs.existsSync(path.resolve(process.cwd(), '../@sneaken')) ||
+    fs.existsSync(path.resolve(process.cwd(), '../../@sneaken'))
   )
 ) {
   process.env.SN_CLI_DEBUG = true
@@ -38,7 +38,7 @@ const program = require('commander')
 const loadCommand = require('../lib/util/loadCommand')
 
 program
-  .version(`@sn/cli ${require('../package').version}`)
+  .version(`@sneaken/cli ${require('../package').version}`)
   .usage('<command> [options]')
 
 program
@@ -129,11 +129,11 @@ program
 
 program
   .command('init <template> <app-name>')
-  .description('generate a project from a remote template (legacy API, requires @sn/cli-init)')
+  .description('generate a project from a remote template (legacy API, requires @sneaken/cli-init)')
   .option('-c, --clone', 'Use git clone when fetching remote template')
   .option('--offline', 'Use cached template')
   .action(() => {
-    loadCommand('init', '@sn/cli-init')
+    loadCommand('init', '@sneaken/cli-init')
   })
 
 program
@@ -186,8 +186,8 @@ program
         System: ['OS', 'CPU'],
         Binaries: ['Node', 'Yarn', 'npm'],
         Browsers: ['Chrome', 'Edge', 'Firefox', 'Safari'],
-        npmPackages: '/**/{typescript,*vue*,@sn/*/}',
-        npmGlobalPackages: ['@sn/cli']
+        npmPackages: '/**/{typescript,*vue*,@sneaken/*/}',
+        npmGlobalPackages: ['@sneaken/cli']
       },
       {
         showNotFound: true,

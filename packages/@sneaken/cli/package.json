@@ -1,28 +1,28 @@
 {
-  "name": "@sn/cli",
+  "name": "@sneaken/cli",
   "version": "0.0.1",
   "description": "> TODO: description",
   "author": "Bin Jiang <bin.jiang@geneegroup.com>",
-  "homepage": "https://github.com/Sneaken/sn-cli#readme",
+  "homepage": "https://github.com/Sneaken/sneaken-cli#readme",
   "license": "ISC",
   "bin": {
-    "sn": "bin/sn.js"
+    "sneaken": "bin/sneaken.js"
   },
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sneaken/sn-cli.git"
+    "url": "git+https://github.com/Sneaken/sneaken-cli.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
-    "url": "https://github.com/Sneaken/sn-cli/issues"
+    "url": "https://github.com/Sneaken/sneaken-cli/issues"
   },
   "dependencies": {
-    "@sn/cli-shared-utils": "^0.0.1",
+    "@sneaken/cli-shared-utils": "^0.0.1",
     "commander": "^7.2.0",
     "import-global": "^0.1.0",
     "leven": "^3.1.0",

@@ -1,4 +1,4 @@
-const { chalk } = require('@sn/cli-shared-utils')
+const { chalk } = require('@sneaken/cli-shared-utils')
 const getGlobalInstallCommand = require('./getGlobalInstallCommand')
 
 module.exports = function loadCommand (commandName, moduleName) {
@@ -16,7 +16,7 @@ module.exports = function loadCommand (commandName, moduleName) {
           const installCommand = getGlobalInstallCommand()
           console.log()
           console.log(
-            `  Command ${chalk.cyan(`sn ${commandName}`)} requires a global addon to be installed.\n` +
+            `  Command ${chalk.cyan(`sneaken ${commandName}`)} requires a global addon to be installed.\n` +
             `  Please run ${chalk.cyan(`${installCommand} ${moduleName}`)} and try again.`
           )
           console.log()

@@ -87,80 +87,12 @@ program
   })
 
 program
-  .command('inspect [paths...]')
-  .description('inspect the webpack config in a project with vue-cli-service')
-  .option('--mode <mode>')
-  .option('--rule <ruleName>', 'inspect a specific module rule')
-  .option('--plugin <pluginName>', 'inspect a specific plugin')
-  .option('--rules', 'list all module rule names')
-  .option('--plugins', 'list all plugin names')
-  .option('-v --verbose', 'Show full function definitions in output')
-  .action((paths, options) => {
-    require('../lib/inspect')(paths, options)
-  })
-
-program
-  .command('serve')
-  .description('alias of "npm run serve" in the current project')
-  .allowUnknownOption()
-  .action(() => {
-    require('../lib/util/runNpmScript')('serve', process.argv.slice(3))
-  })
-
-program
-  .command('build')
-  .description('alias of "npm run build" in the current project')
-  .action((cmd) => {
-    require('../lib/util/runNpmScript')('build', process.argv.slice(3))
-  })
-
-program
   .command('init <template> <app-name>')
   .description('generate a project from a remote template (legacy API, requires @sneaken/cli-init)')
   .option('-c, --clone', 'Use git clone when fetching remote template')
   .option('--offline', 'Use cached template')
   .action(() => {
     loadCommand('init', '@sneaken/cli-init')
-  })
-
-program
-  .command('config [value]')
-  .description('inspect and modify the config')
-  .option('-g, --get <path>', 'get value from option')
-  .option('-s, --set <path> <value>', 'set option value')
-  .option('-d, --delete <path>', 'delete option from config')
-  .option('-e, --edit', 'open config with default editor')
-  .option('--json', 'outputs JSON result only')
-  .action((value, options) => {
-    require('../lib/config')(value, options)
-  })
-
-program
-  .command('outdated')
-  .description('(experimental) check for outdated vue cli service / plugins')
-  .option('--next', 'Also check for alpha / beta / rc versions when upgrading')
-  .action((options) => {
-    require('../lib/outdated')(options)
-  })
-
-program
-  .command('upgrade [plugin-name]')
-  .description('(experimental) upgrade vue cli service / plugins')
-  .option('-t, --to <version>', 'Upgrade <package-name> to a version that is not latest')
-  .option('-f, --from <version>', 'Skip probing installed plugin, assuming it is upgraded from the designated version')
-  .option('-r, --registry <url>', 'Use specified npm registry when installing dependencies')
-  .option('--all', 'Upgrade all plugins')
-  .option('--next', 'Also check for alpha / beta / rc versions when upgrading')
-  .action((packageName, options) => {
-    require('../lib/upgrade')(packageName, options)
-  })
-
-program
-  .command('migrate [plugin-name]')
-  .description('(experimental) run migrator for an already-installed cli plugin')
-  .requiredOption('-f, --from <version>', 'The base version for the migrator to migrate from')
-  .action((packageName, options) => {
-    require('../lib/migrate')(packageName, options)
   })
 
 program

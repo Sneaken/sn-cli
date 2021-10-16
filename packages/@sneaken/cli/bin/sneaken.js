@@ -43,7 +43,7 @@ program
 
 program
   .command('create <app-name>')
-  .description('create a new project powered by vue-cli-service')
+  .description('create a new project powered by sneaken-cli-service')
   .option('-p, --preset <presetName>', 'Skip prompts and use saved or remote preset')
   .option('-d, --default', 'Skip prompts and use default preset')
   .option('-i, --inlinePreset <json>', 'Skip prompts and use inline JSON string as preset')
@@ -115,19 +115,6 @@ program
   })
 
 program
-  .command('ui')
-  .description('start and open the vue-cli ui')
-  .option('-H, --host <host>', 'Host used for the UI server (default: localhost)')
-  .option('-p, --port <port>', 'Port used for the UI server (by default search for available port)')
-  .option('-D, --dev', 'Run in dev mode')
-  .option('--quiet', `Don't output starting messages`)
-  .option('--headless', `Don't open browser on start and output port`)
-  .action((options) => {
-    checkNodeVersion('>=8.6', 'vue ui')
-    require('../lib/ui')(options)
-  })
-
-program
   .command('init <template> <app-name>')
   .description('generate a project from a remote template (legacy API, requires @sneaken/cli-init)')
   .option('-c, --clone', 'Use git clone when fetching remote template')
@@ -186,7 +173,7 @@ program
         System: ['OS', 'CPU'],
         Binaries: ['Node', 'Yarn', 'npm'],
         Browsers: ['Chrome', 'Edge', 'Firefox', 'Safari'],
-        npmPackages: '/**/{typescript,*vue*,@sneaken/*/}',
+        npmPackages: '/**/{typescript,*sneaken*,@sneaken/*/}',
         npmGlobalPackages: ['@sneaken/cli']
       },
       {
@@ -209,10 +196,12 @@ program.on('command:*', ([cmd]) => {
 // add some useful info on help
 program.on('--help', () => {
   console.log()
-  console.log(`  Run ${chalk.cyan(`vue <command> --help`)} for detailed usage of given command.`)
+  console.log(`  Run ${chalk.cyan(`sneaken <command> --help`)} for detailed usage of given command.`)
   console.log()
 })
 
+// 美化格式: --help 后面需要换行
+// program.commands 所有添加的 command
 program.commands.forEach(c => c.on('--help', () => console.log()))
 
 // enhance common error messages
@@ -235,8 +224,7 @@ enhanceErrorMessages('optionMissingArgument', (option, flag) => {
 program.parse(process.argv)
 
 function suggestCommands (unknownCommand) {
-  const availableCommands = program.commands.map(cmd => cmd._name)
-
+  const availableCommands = program.commands.map(cmd => cmd.name())
   let suggestion
 
   availableCommands.forEach(cmd => {

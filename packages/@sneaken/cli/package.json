@@ -24,10 +24,17 @@
   "dependencies": {
     "@sneaken/cli-shared-utils": "^0.0.2",
     "commander": "^7.2.0",
+    "debug": "^4.3.2",
+    "deepmerge": "^4.2.2",
+    "ejs": "^3.1.6",
     "envinfo": "^7.8.1",
     "import-global": "^0.1.0",
+    "inquirer": "^8.2.0",
+    "isbinaryfile": "^4.0.8",
+    "javascript-stringify": "^2.1.0",
     "leven": "^3.1.0",
     "minimist": "^1.2.5",
+    "resolve": "^1.20.0",
     "slash": "^3.0.0"
   },
   "engines": {

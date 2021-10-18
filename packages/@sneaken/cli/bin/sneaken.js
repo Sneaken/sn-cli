@@ -42,6 +42,13 @@ program
   .usage('<command> [options]')
 
 program
+  .command('run <script-name>')
+  .description('run')
+  .action((name) => {
+    require('../lib/run')(name)
+  })
+
+program
   .command('create <app-name>')
   .description('create a new project powered by sneaken-cli-service')
   .option('-p, --preset <presetName>', 'Skip prompts and use saved or remote preset')

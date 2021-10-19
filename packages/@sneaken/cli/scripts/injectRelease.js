@@ -47,10 +47,8 @@ module.exports = async () => {
   log();
   pkg['lint-staged'] = {
     ...pkg['lint-staged'],
-    'lint-staged': {
-      '!(docs/**/*).js': ['prettier --write'],
-      '*.ts?(x)': ['eslint', 'prettier --parser=typescript --write'],
-    },
+    '!(docs/**/*).js': ['prettier --write'],
+    '*.ts?(x)': ['eslint', 'prettier --parser=typescript --write'],
   };
 
   log(`📦  writing commitizen config...`);
@@ -92,5 +90,19 @@ module.exports = async () => {
     },
   );
   log(commitMsgStdout);
-  log()
+  log();
+
+  log('add commitlint.config.js...')
+  log();
+  const commitlintConfigTemplateFilePath = path.join(__dirname, '../template/config/commitlint.config.js');
+  const commitlintConfigFilePath = path.join(projectRootPath, 'commitlint.config.js');
+  fs.copySync(commitlintConfigTemplateFilePath, commitlintConfigFilePath)
+
+  log(`📦  writing scripts release.js...`);
+  log();
+  const scriptsPath = path.join(projectRootPath, 'scripts');
+  fs.ensureDirSync(path.dirname(scriptsPath));
+  const templateFilePath = path.join(__dirname, '../template/release.js');
+  const targetFilePath = path.join(scriptsPath, 'release.js');
+  fs.copySync(templateFilePath, targetFilePath);
 };
